@@ -1,0 +1,10 @@
+<%=form_tag  method: :get do %>
+  <div class="form-group row">
+    <div class="col-12 col-lg-9 text-center">
+      <%= text_field_tag :q, params[:q], placeholder: "Search for vegetables & fruits.." , class:"form-control" %>
+    </div>
+    <div class="col-12 col-lg-3 submit-search text-center">
+      <%= submit_tag "Search", class:"btn btn-outline-success" %>
+    </div>
+  </div>
+<% end %>

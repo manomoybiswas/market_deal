@@ -1,0 +1,60 @@
+<div class="page-wrapper font-robo">
+  <div class="wrapper wrapper--w960">
+    <div class="card card-2">
+      <div class="row">
+        <div class = "col-sm-0 col-md-4 card-heading"></div>
+        <div class="col-sm-12 col-md-8">
+          <div class="card-body">
+            <% if["edit"].include?(params[:action])%>
+              <h1 class="title text-center"> Update User Info </h1>
+            <% else %>
+              <h1 class="title text-center"> Registration Info</h1>
+            <% end %>
+            <%= form_for @user, method: :post do |form| %>
+              <% if @user.errors.any? %>
+                <% @user.errors.full_messages.each do |msg| %>
+                  <div class="alert alert-danger"><%= msg %></div>
+                <%end%>
+              <%end%>
+
+              <div class="input-group row">
+                <div class = "col-12">
+                  <%= form.text_field :name, autofocus: true, class: "input--style-2", placeholder: "Name", required: true %>
+                </div>
+              </div>
+              <div class="input-group row">
+                <div class = "col-12">
+                  <%= form.email_field :email, class: "input--style-2", placeholder: "Email", required: true %>
+                </div>
+              </div>
+              <div class="input-group row">
+                <div class = "col-12">
+                  <%= form.text_field :mobile, class: "input--style-2", placeholder: "Mobile no", required: true %>
+                </div>
+              </div>
+              <div class="input-group row">
+                <div class = "col-12">
+                  <%= form.password_field :password, class: "input--style-2", placeholder: "Password", required: true %>
+                </div>
+              </div>
+              <div class="input-group row">
+                <div class = "col-12">
+                  <%= form.password_field :password_confirmation, class: "input--style-2", placeholder: "Confirm Password", required: true %>
+                </div>
+              </div>
+              <div class="input-group row">
+                <div class = "col-12">
+                  <% unless["edit"].include?(params[:action])%>
+                    <%=form.submit( "Register",{ class: "btn btn-success btn-lg", data:{disable_with: "Registering.."}})%>
+                  <% else %>
+                    <%=form.submit( "Update",{ class: "btn btn-primary btn-lg", data:{disable_with: "Updating..."}})%>
+                  <% end %>
+                </div>
+              </div>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
