@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2 item-col">
+    <div class="card card-1">
+      <div class="image-box">
+        <%= image_tag  "potato", alt: "potato", class: "product-image" %>
+      </div>
+      <div class="card-body">
+        <h6 class="card-title">Potato</h6>
+        <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i> 350.00</p>
+        <%=form_tag method: :get do %>
+          <%=select_tag "Quantity", options_for_select([ "500gm", "1kg" ], "500gm"), class: "form-control custom-select" %>
+          <%= submit_tag "Add to cart", class:"btn btn-danger" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

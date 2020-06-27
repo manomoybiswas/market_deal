@@ -1,35 +1,39 @@
- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand nav-logo" href=<%= root_path %>><%= image_tag "market_deal_logo.png", class: "site-logo"%></a>
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item mobile-cart-icon">
-      <%= link_to "", new_session_path, class:"btn fa fa-shopping-cart" %>
-    </li>
-  </ul>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Home", root_path, class:"nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Products", products_path, class:"nav-link" %>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Services</a>
-      </li>
-    </ul>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container nav-container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand nav-logo" href=<%= root_path %>><%= image_tag "market_deal_logo.png", class: "site-logo"%></a>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item navbar-search-bar"><%= render "layouts/search" %></li>
-      <li class="nav-item cart-icon">
+      <li class="nav-item mobile-cart-icon">
         <%= link_to "", new_session_path, class:"btn fa fa-shopping-cart" %>
       </li>
     </ul>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to "Home", root_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Products", products_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item navbar-search-bar"><%= render "layouts/search" %></li>
+        <li class="nav-item cart-icon">
+          <%= link_to "", new_session_path, class:"btn fa fa-shopping-cart" %>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav> 
 
 <div class="mobile-search-bar">
-  <%= render "layouts/search" %>
+  <div class="container nav-container">
+    <%= render "layouts/search" %>
+  </div>
 </div>

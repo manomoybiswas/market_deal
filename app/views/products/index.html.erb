@@ -1,2 +1,30 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<div class="row align-items-center justify-items-center">
+  <div class="col-12">
+    <%= link_to "Add Product", new_product_path, class: "btn btn-primary btn-lg", data: {turbolinks: false } %>
+  </div>
+</div>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2 item-col">
+      <div class="card card-1">
+        <div class="image-box">
+          <%= image_tag  "potato", alt: "potato", class: "product-image" %>
+        </div>
+        <div class="card-body">
+          <h6 class="card-title"><%= product.product_name %></h6>
+          <div class="row">
+            <div class="col-4">
+              <%= link_to "", product_path(product), class:"fa fa-eye" %>
+            </div>
+            <div class="col-4">
+              <%= link_to "", edit_product_path(product), class:"fa fa-edit" %>
+            </div>
+            <div class="col-4">
+              <%= link_to "", product_path(product), data: {confirm: "Are you sure to delete?"}, method: :delete, class:"fa fa-trash"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>

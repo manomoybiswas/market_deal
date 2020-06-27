@@ -1,18 +1,46 @@
 <%= render "layouts/carousel" %>
-<div class="row no-gutters">
-  <% 12.times do %>
-    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-      <div class="card card-1">
-        <%= image_tag  "login_page_side_load", alt: "item1", class: "product-image" %>
-        <div class="card-body">
-          <h6 class="card-title">Potato</h6>
-          <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i> 350.00</p>
-          <%=form_tag method: :get do %>
-            <%=select_tag "Quantity", options_for_select([ "500gm", "1kg" ], "500gm"), class: "form-control custom-select" %>
-            <%= submit_tag "Add to cart", class:"btn btn-danger" %>
-          <% end %>
+<div class="vegetable">
+  <div class = "wrapper">
+    <div class="sales-product">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-auto text-left">
+          <h2 class="under-line">Vegetables</h2>
+        </div>
+        <div class="col-auto text-right">
+          <h5 class="see-more">See more</h5>
         </div>
       </div>
+      <hr class="grey-line">
     </div>
-  <% end %>
+    <div class="row">
+      <%
+=begin%>
+ <%i = 0 %> 
+<%
+=end%>
+      <% Product.all.each do |product| %>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 item-col">
+          <div class="card card-1">
+            <div class="image-box">
+              <%= image_tag  "potato", alt: "potato", class: "product-image" %>
+            </div>
+            <div class="card-body">
+              <h6 class="card-title"><%= product.product_name %></h6>
+              <p class="card-text"><i class="fa fa-inr" aria-hidden="true"></i> <%= product.price %> / <%=product.product_unit%></p>
+              <%=form_tag method: :get do %>
+                <%=select_tag "Quantity", options_for_select([ "500gm", "1kg" ], "500gm"), class: "form-control custom-select" %>
+                <%= submit_tag "Add to cart", class:"btn btn-danger" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <%
+=begin%>
+ <% i =i+1 %>
+        <% return if i==1 %> 
+<%
+=end%>
+      <%end%>
+    </div>
+  </div>
 </div>

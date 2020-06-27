@@ -34,6 +34,21 @@
         </div>
         <div class="col-sm-12 col-md-4">
           <div class="text-center">
+            <%= link_to products_path, class: "box btn btn-warning" do%>
+              <div class="dashboard-wrapper">
+                <div class="user-icon">
+                  <i class="fa fa-product-hunt"></i>
+                </div>
+                <div class="user-text">
+                  <h2><%= total_users %></h2>
+                  <span>Products</span>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="text-center">
             <%= link_to quantities_path, class: "box btn btn-danger" do %>
               <div class="dashboard-wrapper">
                 <div class="fa fa-balance-scale" aria-hidden="true"></div>

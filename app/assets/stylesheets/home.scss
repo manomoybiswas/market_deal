@@ -1,10 +1,95 @@
 .card-1{
-  width:99%;
+  width:100%;
   padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  // margin-top: 5px;
+  // margin-bottom: 5px;
+  margin: 5px;
+}
+.item-col{
+  padding:5px;
+}
+.image-box{
+  display: inline-block;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  width: 100%;
+  // height: auto;
+  // width: 540px;
+}
+.image-box .btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
 }
 .product-image{
   width: 100%;
+  height: auto;
   background: no-repeat left top/cover;
+}
+.product-image:hover{
+  transition: all 0.3s;
+  transform: scale(1.2);
+}
+.sales-product{
+  padding-top: 10px;
+}
+.under-line{
+  font-size: 20px;
+  border-bottom: 2px solid #5bf103;
+  margin-bottom: 0px;
+}
+.see-more{
+  font-size: 12px;
+  color: #4e0606
+}
+.see-more:hover{
+  transform: scale(1.1);	
+  transition: transform .2s;
+  color: #e20e0e
+}
+.grey-line{
+  border-top: 2px solid #D3D3D3;
+  margin-top: -2px;
+  width:100%
+}
+.feed-carousel-viewport {
+  width: 100%;
+  min-height: 220px;
+  height: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+}
+.feed-carousel-shelf {
+  display: inline-block;
+  position: relative;
+  left: 0;
+  margin: 0 0 14px;
+  padding: 0;
+}
+.feed-carousel-card {
+  text-align: center;
+  min-width: 145px;
+  max-width: 270px;
+  max-height: 200px;
+  overflow: hidden;
+  margin: 0 10px 0 0;
+  position: relative;
+  display: inline-block;
+}
+.carousel-item{
+  width: 200px;
+  display: inline-block;
 }
