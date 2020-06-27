@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
 
     if user
       login(@user)
-      redirect_to users_path, flash: { success: t("session.login_success", user: @user.name) }
+      if @user.admin
+        redirect_to admin_dashboard_path, flash: { success: t("session.login_success", user: @user.name) }
+      else
+        redirect_to root_path, flash: { success: t("session.login_success", user: @user.name) }
+      end
     else
       render "new", flash: { danger: t("session.invalid_credential") }
     end
@@ -22,7 +26,7 @@ class SessionsController < ApplicationController
   end
 
   def new
-    return redirect_to user_dashboard_path, flash: { warning: t("session.logged_in") } if logged_in?
+    return redirect_to admin_dashboard_path, flash: { warning: t("session.logged_in") } if logged_in?
   end  
 
   private

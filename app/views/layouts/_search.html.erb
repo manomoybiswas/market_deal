@@ -1,10 +1,10 @@
 <%=form_tag  method: :get do %>
   <div class="form-group row">
-    <div class="col-12 col-lg-9 text-center">
-      <%= text_field_tag :q, params[:q], placeholder: "Search for vegetables & fruits.." , class:"form-control" %>
+    <div class="col-10 col-md-10 p-r-0 text-center">
+      <%= text_field_tag :q, params[:q], placeholder: "Search a product" , class:"form-control search-field" %>
     </div>
-    <div class="col-12 col-lg-3 submit-search text-center">
-      <%= submit_tag "Search", class:"btn btn-outline-success" %>
+    <div class="col-2 col-md-1 p-l-0 text-center">
+    <button type="submit" name="commit" value="" class="btn btn-success search-btn fa fa-search" data-disable-with=""></button>
     </div>
   </div>
 <% end %>

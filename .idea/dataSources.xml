@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails market_deal: production" uuid="ee0ad177-c778-4adf-90af-774a954db520">
+      <driver-ref>greenplum</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/market_deal_production</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails market_deal: test" uuid="50fb608b-6cda-4e6c-87f2-40a528b00714">
+      <driver-ref>greenplum</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/market_deal_test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails market_deal: development" uuid="facf0b85-7d58-4caa-b70c-2c1ddb0fa7bf">
+      <driver-ref>greenplum</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/market_deal_development</jdbc-url>
+    </data-source>
+  </component>
+</project>

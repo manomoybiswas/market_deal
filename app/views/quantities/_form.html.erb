@@ -1,0 +1,31 @@
+<%= form_for @quantity, method: :post do |form| %>
+  <% if @quantity.errors.any? %>
+    <% @quantity.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <%end%>
+  <%end%>
+
+  <div class="form-group row">
+    <div class = "col-12 col-sm-4 col-md-4">
+      <%= form.label :product_id,"Product", for: "product id", class:"col-12  col-form-label"%>
+      <%= form.select :product_id, options_from_collection_for_select(Product.all, :id, :product_name, form.object.product_id), {prompt: "Choose product.."}, {required: true, class: "form-control custom-select d-block w-100", autofocus: true} %>
+    </div>
+    <div class = "col-12 col-sm-4 col-md-3">
+      <%= form.label :quantity_size,"Quantity", for: "quantity_size", class:"col-12 col-form-label"%>
+      <%= form.number_field :quantity_size, step: 0.25, class: "form-control", placeholder: "Enter quantity", required: true %>
+    </div>
+    <div class = "col-12 col-sm-4 col-md-3">
+      <%= form.label :unit,"Unit", for: "unit", class:"col-12 col-form-label"%>
+      <% unit = %w[Gram K.G Ltr. ml] %>
+      <%= form.select :unit, options_for_select(unit ,@quantity.unit), {prompt: "Choose.."}, {required: true, class: "form-control custom-select d-block w-100"} %>
+    </div>
+    <div class = "col-12 col-md-2">
+      <%= form.label :_, "", class:"col-12 col-form-label"%>
+      <% if["edit"].include?(params[:action])%>
+        <%=form.submit( "Update",{ class: "btn btn-success btn-lg", data:{disable_with: "Updating..."}})%>
+      <% else %>
+        <%=form.submit( "Add",{ class: "btn btn-success btn-lg", data:{disable_with: "Adding.."}})%>
+      <% end %>
+    </div>
+  </div>
+<%end%>

@@ -1,32 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href=<%= root_path %>><%= image_tag "market_deal_logo.png" %></a>
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <a class="navbar-brand nav-logo" href=<%= root_path %>><%= image_tag "market_deal_logo.png", class: "site-logo"%></a>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item mobile-cart-icon">
+      <%= link_to "", new_session_path, class:"btn fa fa-shopping-cart" %>
+    </li>
+  </ul>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <%= link_to "Home", root_path, class:"nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+        <%= link_to "Products", products_path, class:"nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link" href="#">Services</a>
       </li>
     </ul>
-    <%= render "layouts/search" %>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item navbar-search-bar"><%= render "layouts/search" %></li>
+      <li class="nav-item cart-icon">
+        <%= link_to "", new_session_path, class:"btn fa fa-shopping-cart" %>
+      </li>
+    </ul>
   </div>
-</nav>
+</nav> 
+
+<div class="mobile-search-bar">
+  <%= render "layouts/search" %>
+</div>
