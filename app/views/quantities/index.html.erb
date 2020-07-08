@@ -18,6 +18,8 @@
               <thead>
                 <tr class="text-center">
                   <th scope="col">#</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Product ID</th>
                   <th scope="col">Avaiable Quantity Option</th>
                   <th scope="col">Unit</th>
                   <th scope="col">Edit</th>
@@ -29,6 +31,8 @@
                   <% @quantities.each do |quantity|%>
                     <tr>
                       <th scope="row"><%= @quantities.index(quantity)+1 %></th>
+                      <td><%= quantity.product.product_name%></td>
+                      <td><%= quantity.product.id%></td>
                       <td><%= quantity.quantity_size%></td>
                       <td><%= quantity.unit%></td>
                       <td class="text-center">

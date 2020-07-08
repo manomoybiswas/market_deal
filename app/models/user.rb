@@ -2,9 +2,9 @@ class User < ApplicationRecord
   has_secure_password
   # has_many :tasks, foreign_key: "assign_task_to", dependent: :destroy
   # has_many :notifications, foreign_key: "user_id"
-  
+
   # mount_uploader :avater, AvaterUploader
-  
+  has_one :cart, dependent: :destroy
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   VALID_MOBILE_REGEX=/\A[6-9][0-9]{9}\z/.freeze
 

@@ -38,13 +38,23 @@
                   <%= form.select :product_unit, options_for_select(product_type, @product.product_unit), {prompt: "Choose product unit.."}, {required: true, class: "form-control custom-select d-block w-100"} %>
                 </div>
               </div>
-              <div class="input-group row no-gutters align-items-center">
+
+              <div class="input-group row">
+                <%= form.fields_for :product_picture do |p| %>
+                  <div class = "col-12">
+                    <%= p.file_field :picture, multiple: true, class: "form-control", name: "product_picture[picture][]" %>
+                    <%= p.hidden_field :picture_cache %>
+                  </div>
+                <% end %>
+              </div>
+
+              <div class="input-group row align-items-center">
                 <div class="col-1"><i class="fa fa-inr" aria-hidden="true"></i></div>
-                <div class = "col-4">
+                <div class = "col-3">
                   <%= form.number_field :price, class: "fa fa-inr input--style-2", placeholder: "Price", required: true %>
                 </div>
               </div>
-              
+
               <div class="row">
                 <div class = "col-12">
                   <% if["edit"].include?(params[:action])%>

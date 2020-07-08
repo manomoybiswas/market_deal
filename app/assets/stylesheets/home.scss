@@ -14,8 +14,7 @@
   margin: auto;
   overflow: hidden;
   width: 100%;
-  // height: auto;
-  // width: 540px;
+  // height: 150px;
 }
 .image-box .btn{
   position: absolute;
@@ -34,7 +33,7 @@
 }
 .product-image{
   width: 100%;
-  height: auto;
+  height: 150px;
   background: no-repeat left top/cover;
 }
 .product-image:hover{
@@ -54,7 +53,7 @@
   color: #4e0606
 }
 .see-more:hover{
-  transform: scale(1.1);	
+  transform: scale(1.1);
   transition: transform .2s;
   color: #e20e0e
 }
@@ -63,33 +62,51 @@
   margin-top: -2px;
   width:100%
 }
-.feed-carousel-viewport {
-  width: 100%;
-  min-height: 220px;
-  height: 220px;
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
+.packet-count-col{
+  margin-bottom: 5px;
+  margin-top: 2px;
+}
+.my-field{
+  display: inline-block;
+  border: 1px solid;
+  width: 50px;
+  height: 35px;
+  margin-top: -3px;
+}
+.packet-count-btn{
+  display: inline-block;
+  width: 36px;
+  height: 35px;
+  cursor: pointer;
+  border: 1px solid #e4e4e4;
+  background-color: #ffffff;
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 22px;
   margin: 0;
 }
-.feed-carousel-shelf {
-  display: inline-block;
-  position: relative;
-  left: 0;
-  margin: 0 0 14px;
-  padding: 0;
+.packet-count-btn:hover{
+  border: 1px solid #888686;
+  background-color: #7a7878;
+
 }
-.feed-carousel-card {
+.minus-button{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: none;
+}
+.plus-button{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: none;
+}
+.traveller-value{
+  border: 1px solid #e4e4e4;
+  background-color: #e4e4e4;
+  display: inline-block;
+  width: 50px;
+  height: 35px;
   text-align: center;
-  min-width: 145px;
-  max-width: 270px;
-  max-height: 200px;
-  overflow: hidden;
-  margin: 0 10px 0 0;
-  position: relative;
-  display: inline-block;
-}
-.carousel-item{
-  width: 200px;
-  display: inline-block;
+  font-size: 22px;
+  margin: 0;
 }

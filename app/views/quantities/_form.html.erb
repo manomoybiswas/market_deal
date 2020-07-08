@@ -1,4 +1,4 @@
-<%= form_for @quantity, method: :post do |form| %>
+<%= form_for @quantity do |form| %>
   <% if @quantity.errors.any? %>
     <% @quantity.errors.full_messages.each do |msg| %>
       <div class="alert alert-danger"><%= msg %></div>

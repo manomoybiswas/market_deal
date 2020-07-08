@@ -11,16 +11,16 @@ class QuantitiesController < ApplicationController
     return redirect_to request.referrer, flash: { succcess: "Quantity deleted." } if Quantity.destroy
     flash[:succcess] = "Something went wrong during deleting quantity."
   end
-  
+
   def index
     @quantity = Quantity.new
     @quantities = Quantity.all
-  end 
+  end
 
   def new
     @quantity = Quantity.new
   end
-  
+
   def update
     return redirect_to quantity_index_path, flash: { success: "Quantity updated" } if @quantity.update(quantity_params)
     render "edit", flash: { danger: "Something went wrong during updating quantity"}
@@ -28,11 +28,11 @@ class QuantitiesController < ApplicationController
 
   private
 
-  def quantity_params 
-    params.require(:quantity).permit(:quantity_size, :unit)
+  def quantity_params
+    params.require(:quantity).permit(:product_id, :quantity_size, :unit)
   end
 
   def set_quantity
-    @quantity = Quantity.find(params[:id])    
-  end 
+    @quantity = Quantity.find(params[:id])
+  end
 end
