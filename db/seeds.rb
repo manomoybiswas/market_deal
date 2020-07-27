@@ -1,1 +1,1 @@
-admin = User.new(id: 2, name: "Admin", email: "admin@gmail.com", mobile:"7123456789", password: "admin", password_confirmation: "admin", admin: true).save(validate: false)
+admin = User.new(id: 1, name: "Admin", username: "admin", email: "admin@gmail.com", mobile:"7123456789", password: "admin", password_confirmation: "admin", auth_type: "username_password", admin: true).save(validate: false)

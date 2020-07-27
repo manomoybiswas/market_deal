@@ -34,10 +34,16 @@
   </head>
 
   <body class="container">
-    <%= render "layouts/toolbar" %>
-    <%= render "layouts/navbar" %>
-    <%= render "layouts/alert" %>
-    <%= yield %>
-    <%= render "layouts/footer" %>
+    <header>
+      <%= render "layouts/toolbar" %>
+      <%= render "layouts/navbar" %>
+      <%= render "layouts/alert" %>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <%= render "layouts/footer" %>
+    </footer>
   </body>
 </html>

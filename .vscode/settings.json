@@ -1,0 +1,17 @@
+{
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.format": "rubocop",
+    "ruby.intellisense": "rubyLocate",
+    "ruby.useLanguageServer": true,
+    "html.format.indentHandlebars": true,
+    "html.format.indentInnerHtml": true,
+    "emmet.includeLanguages": {
+        "*.erb": "html"
+    },
+    "emmet.excludeLanguages": [
+    
+        "markdown"
+    ],
+    "solargraph.autoformat": true,
+    "solargraph.formatting": true
+}

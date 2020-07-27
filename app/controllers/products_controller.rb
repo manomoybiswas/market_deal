@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  include ProductsHelper
   before_action :authenticate_user!, :check_user_is_admin
   before_action :set_product, only: [:edit, :update]
   def index
@@ -21,12 +22,12 @@ class ProductsController < ApplicationController
     end
   end
 
-
   def show
   end
 
   def edit
   end
+
   def update
     if @product.update(products_param)
       params[:product_picture]["picture"].each do |file|

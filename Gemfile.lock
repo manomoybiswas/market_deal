@@ -60,22 +60,6 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     autoprefixer-rails (9.7.6)
       execjs
-    aws-eventstream (1.1.0)
-    aws-partitions (1.336.0)
-    aws-sdk-core (3.102.1)
-      aws-eventstream (~> 1, >= 1.0.2)
-      aws-partitions (~> 1, >= 1.239.0)
-      aws-sigv4 (~> 1.1)
-      jmespath (~> 1.0)
-    aws-sdk-kms (1.35.0)
-      aws-sdk-core (~> 3, >= 3.99.0)
-      aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.72.0)
-      aws-sdk-core (~> 3, >= 3.102.1)
-      aws-sdk-kms (~> 1)
-      aws-sigv4 (~> 1.1)
-    aws-sigv4 (1.2.1)
-      aws-eventstream (~> 1, >= 1.0.2)
     bcrypt (3.1.13)
     bcrypt (3.1.13-java)
     better_errors (2.7.1)
@@ -108,9 +92,6 @@ GEM
       image_processing (~> 1.1)
       mimemagic (>= 0.3.0)
       mini_mime (>= 0.1.3)
-    carrierwave-aws (1.5.0)
-      aws-sdk-s3 (~> 1.0)
-      carrierwave (~> 2.0)
     childprocess (3.0.0)
     coderay (1.1.3)
     concurrent-ruby (1.1.6)
@@ -141,7 +122,6 @@ GEM
       ruby-vips (>= 2.0.17, < 3)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
-    jmespath (1.4.0)
     launchy (2.5.0)
       addressable (~> 2.7)
     letter_opener (1.7.0)
@@ -326,7 +306,6 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   carrierwave
-  carrierwave-aws
   factory_bot_rails
   faker (~> 1.9, >= 1.9.6)
   font-awesome-rails (~> 4.7, >= 4.7.0.5)

@@ -1,0 +1,2 @@
+class AvailableQuantity < ApplicationRecord
+end
