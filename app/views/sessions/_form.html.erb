@@ -10,7 +10,7 @@
             <%= form_for :login, url: :sessions do |form| %>
               <div class="input-group row">
                 <div class = "col-12">
-                  <%= form.email_field :email, class: "input--style-2", placeholder: "Email", required: true %>
+                  <%= form.text_field :email, class: "input--style-2", placeholder: "Username / Email", required: true %>
                 </div>
               </div>
               <div class="input-group row">

@@ -110,3 +110,60 @@
   font-size: 22px;
   margin: 0;
 }
+.overview-wrapper{
+  padding: 0 10px;
+  min-height: calc(100vh - 30px - 60px - 32px);
+  h3{
+    line-height: 30px;
+  }
+}
+.overview-header{
+  margin: 0 -10px 30px;
+  height: 50px;
+  padding-top: 15px;
+  padding-left: 50px;
+}
+.page-title{
+  font-size: 20px;
+  font-weight: bold;
+}
+.page-time span{
+  font-size: 16px;
+  color: #848a96;
+  margin-top: -5px;
+  .fa-calendar{
+    font-size: 28px;
+    margin-right: 5px;
+  }
+}
+.box {
+  padding: 15px 10px 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+.box-title{
+  font-size: 18px;
+  font-weight: bolder;
+}
+.div-inline {
+  // padding-left: 10px;
+  padding-top: 20px;
+  // margin-left: -5px;
+}
+.overview-icon{
+  display: inline-block;
+  // width: 67px;
+  // height: 30px;
+  // vertical-align: top;
+  width: 67px;
+  height: 30px;
+  font-size: 32px;
+}
+.count{
+  // display: inline-block;
+  float: right;
+  .counter{
+    font-size: 24px;
+    font-weight: bolder;
+  }
+}

@@ -1,0 +1,173 @@
+<div id="mySidenav" class="sidenav bg-dark">
+  <div class="row no-gutters">
+    <div class="col-12 col-sm-3">
+      <div class="user-avater">
+        <% if current_user.avater.present? %>
+          <%= image_tag current_user.avater.url, alt: "#{current_user.name}_image", class: "user-image" %>
+        <% else %>
+          <%= image_tag "dummy_user.jpg", alt: "#{current_user.name}_image", class: "user-image" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-12 col-sm-9">
+      <div class="user-details ">
+        <h5 class="user-name text-left text-color-white"><%= current_user.name %></h5>
+        <span class="user-email text-color-white">Email: <%= current_user.email %></span>
+        <p class="user-role text-color-white"><%= "Role: Admin" if current_user.admin %></p>
+      </div>
+    </div>
+  </div>
+  <div class="dashboard-item">
+    <div class="row">
+      <div class="col-6">
+        <h6 class="text-right menu-text">Theme :</h6>
+      </div>
+      <div class="col-6 text-left">
+        <label class="switch">
+          <input class="btn-toggle" type="checkbox" checked>
+          <span class="slider round"><span class="slider-btn fa fa-moon-o"></span></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <%= link_to overview_path, class: "dashboard-item" do %>
+    <div class="row">
+      <div class="col-2 text-center">
+        <i class="fa fa-pie-chart"></i>
+      </div>
+      <div class="col-10 text-left">
+        <span class="menu-text">Overview</span>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to users_path, class: "dashboard-item" do %>
+    <div class="row ">
+      <div class="col-2 text-center">
+        <i class="fa fa-users"></i>
+      </div>
+      <div class="col-10 text-left">
+        <span class="menu-text">Registered User</span>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to categories_path, class: "dashboard-item" do %>
+    <div class="row ">
+      <div class="col-2 text-center">
+        <i class="fa fa-tags"></i>
+      </div>
+      <div class="col-10 text-left">
+        <span class="menu-text">Product Category</span>
+      </div>
+    </div>
+  <% end %>
+  <a class="dashboard-item" id="product_dropdown">
+    <div class="row">
+      <div class="col-2 text-center">
+        <i class="fa fa-product-hunt"></i>
+      </div>
+      <div class="col-7 text-left">
+        <span class="menu-text">Product</span>
+      </div>
+      <div class="col-1 text-right">
+        <i class="fa fa-caret-down" id="caret_1"></i>
+      </div>
+    </div>
+    <div class="sub-menu" id="product_dropdown_menu">
+      <div class="row">
+        <div class="col-2">
+          <i class="fa fa-plus"></i> 
+        </div>
+        <div class="col-10">
+          <span class="sub-menu-text">Add Product</span>
+        </div>
+        <div class="col-2">
+          <i class="fa fa-eye"></i> 
+        </div>
+        <div class="col-10">
+          <span class="sub-menu-text"> Show Products</span>
+        </div>
+      </div>
+    </div>
+  </a>
+  <div class="nav-item dropdown">
+    <div class="dashboard-item dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div class="row">
+        <div class="col-2 text-center">
+          <i class="fa fa-product-hunt"></i>
+        </div>
+        <div class="col-7 text-left">
+          <!--<div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>-->
+          <span class="menu-text">Product</span>
+        </div>
+        <div class="col-1 text-right">
+          <i class="fa fa-caret-down" id="caret_1"></i>
+        </div>
+      </div>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+  
+
+  <%= link_to "#", class: "dashboard-item" do %>
+    <div class="row ">
+      <div class="col-2 text-center">
+        <i class="fa fa-balance-scale"></i>
+      </div>
+      <div class="col-10 text-left">
+        <span class="menu-text">Available Quantity</span>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to "#", class: "dashboard-item" do %>
+    <div class="row ">
+      <div class="col-2 text-center">
+        <i class="fa fa-dropbox"></i>
+      </div>
+      <div class="col-10 text-left">
+        <span class="menu-text">Orders</span>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to "#", class: "dashboard-item" do %>
+    <div class="row ">
+      <div class="col-2 text-center">
+        <i class="fa fa-shopping-cart"></i>
+      </div>
+      <div class="col-10 text-left">
+        <span class="menu-text">Carts</span>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to "#", class: "dashboard-item" do %>
+    <div class="row ">
+      <div class="col-2 text-center">
+        <i class="fa fa-address-card-o"></i>
+      </div>
+      <div class="col-10 text-left">
+        <span class="menu-text">Addresses</span>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<%= render "layouts/menu_btn" %>
+        

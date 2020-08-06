@@ -1,4 +1,6 @@
-<%=form_tag  method: :get do %>
+<%
+=begin%>
+ <%=form_tag  method: :get do %>
   <div class="form-group row">
     <div class="col-10 col-md-10 p-r-0 text-center">
       <%= text_field_tag :q, params[:q], placeholder: "Search a product" , class:"form-control search-field" %>
@@ -7,4 +9,66 @@
     <button type="submit" name="commit" value="" class="btn btn-success search-btn fa fa-search" data-disable-with=""></button>
     </div>
   </div>
-<% end %>
+<% end %> 
+<%
+=end%>
+
+<%
+=begin%>
+ <div class="row">    
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="input-group">
+      <div class="input-group-btn search-panel">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          <span id="search_concept">Filter by</span> <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#contains">Contains</a></li>
+          <li><a href="#its_equal">It's equal</a></li>
+          <li><a href="#greather_than">Greather than ></a></li>
+          <li><a href="#less_than">Less than < </a></li>
+          <li class="divider"></li>
+          <li><a href="#all">Anything</a></li>
+        </ul>
+      </div>
+      <input type="hidden" name="search_param" value="all" id="search_param">         
+      <input type="text" class="form-control" name="x" placeholder="Search term...">
+      <span class="input-group-btn">
+          <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+      </span>
+    </div>
+  </div>
+</div> 
+<%
+=end%>
+<div class="row">
+  <div class="col-2 col-md-1 p-l-0 text-center">
+    <div class="input-group">
+      <div class="input-group-btn search-pannel">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          <span id="search_concept">All</span> <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#contains">Contains</a></li>
+          <li><a href="#its_equal">It's equal</a></li>
+          <li><a href="#greather_than">Greather than ></a></li>
+          <li><a href="#less_than">Less than < </a></li>
+          <li class="divider"></li>
+          <li><a href="#all">Anything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-10 col-md-8 col-lg-7 col-xl-6">
+    <%=form_tag  method: :get do %>
+      <div class="form-group row">
+        <div class="col-10 col-md-10 p-r-0 text-center">
+          <%= text_field_tag :q, params[:q], placeholder: "Search a product" , class:"form-control search-field" %>
+        </div>
+        <div class="col-2 col-md-1 p-l-0 text-center">
+        <button type="submit" name="commit" value="" class="btn btn-success search-btn fa fa-search" data-disable-with=""></button>
+        </div>
+      </div>
+    <% end %> 
+  </div>
+</div>

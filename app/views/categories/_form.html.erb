@@ -12,15 +12,13 @@
     </div>
     <div class = "col-12 col-sm-6 col-md-6">
       <%= form.label :category_description,"Summary", for: "category_description", class:"col-12 col-form-label"%>
-      <%= form.text_area :category_description, class: "form-control", placeholder: "Enter Summary" %>
+      <%= form.text_field :category_description, class: "form-control", placeholder: "Enter Summary" %>
     </div>
     <div class = "col-12 col-sm-2 col-md-2">
       <%= form.label :_, "", class:"col-12 col-form-label"%>
-      <% if["edit"].include?(params[:action])%>
-        <%=form.submit( "Update",{ class: "btn btn-success btn-lg", data:{disable_with: "Updating..."}})%>
-      <% else %>
+      <div id="update_btn">
         <%=form.submit( "Add",{ class: "btn btn-success btn-lg", data:{disable_with: "Adding.."}})%>
-      <% end %>
+      </div>
     </div>
   </div>
 <%end%>

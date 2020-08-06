@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(products_param)
+    @product.user_id = current_user.id
     if @product.save
       params[:product_picture]["picture"].each do |file|
         @product_picture = @product.product_picture.create(picture: file, product_id: @product.id)
@@ -46,6 +47,6 @@ class ProductsController < ApplicationController
   end
 
   def products_param
-    params.require(:product).permit(:product_name, :product_description, :product_category_id, :product_unit, :price, product_picture_attributes: [:id, :product_id, :picture])
+    params.require(:product).permit(:title, :summary, :unit_id, :type, :content, product_picture_attributes: [:id, :product_id, :picture], available_quantity_attributes: [:id, :product_id, :unit_id, :packet_size, :discount_percent, :discount_amount, :retail_price])
   end
 end

@@ -1,14 +1,20 @@
 class UsersController < ApplicationController
   include UsersHelper
-  before_action :authenticate_user!, except: [:new, :create]
+  layout "dashboard", only: [:dashboard, :index,]
+  before_action :authenticate_user!, except: [:new, :create, :email_validator, :username_validator, :mobile_validator]
   before_action :check_user_is_admin, only: [:destroy]
   before_action :set_user, only: [:edit, :update, :destroy]
   def create
     @user = User.new(user_params) 
+    @user.auth_type = "username_password"
     return redirect_to users_path, flash: { success: "Registration Successful" } if @user.save
     render "new", flash: { danger: "Registration faild. Please try again" }
   end
   
+  def dashboard
+
+  end
+
   def destroy
     return unless admin?
     return redirect_to users_path, flash: {success: t("user.destroy_success")} if @user.destroy
@@ -46,12 +52,27 @@ class UsersController < ApplicationController
     end
   end  
   
+  def email_validator
+    @user = User.find_by_email(params[:email])
+    render json: {email_exists: @user.present?}
+  end
+
+  def username_validator
+    @user = User.find_by_username(params[:username])
+    render json: {username_exists: @user.present?}
+  end
+  
+  def mobile_validator
+    @user = User.find_by_mobile(params[:mobile])
+    render json: {mobile_exists: @user.present?}
+  end
+
   private
   def set_user
     @user = User.find(params[:id])
   end
   
   def user_params
-    params.require(:user).permit(:name, :email, :mobile, :password, :password_confirmation, :avater)
+    params.require(:user).permit(:name, :email, :username, :mobile, :password, :password_confirmation, :avater)
   end
 end

@@ -7,10 +7,10 @@
           <div class="card-body">
             <% unless["edit"].include?(params[:action])%>
               <h1 class="title text-center">Create Product</h1>
-              <% content_for :title, "Create Category" %>
+              <% content_for :title, "Create Product" %>
             <% else %>
               <h1 class="title text-center">Update Product</h1>
-              <% content_for :title, "Update Category" %>
+              <% content_for :title, "Update Product" %>
             <% end %>
             <%= form_for @product, html: { multipart: true } do |form| %>
               <% if @product.errors.any? %>
@@ -20,22 +20,27 @@
               <%end%>
 
               <div class="input-group row">
-                <div class = "col-12">
-                  <%= form.text_field :product_name, autofocus: true, class: "input--style-2", placeholder: "Product name", required: true %>
-                </div>
-              </div>
-              <div class="input-group row">
-                <div class = "col-12">
-                  <%= form.text_area :product_description, class: "input--style-2", placeholder: "Description", required: true %>
-                </div>
-              </div>
-              <div class="input-group row">
                 <div class = "col-12 col-sm-6">
                   <%= form.select :product_category_id, options_from_collection_for_select(ProductCategory.all, :id, :category_name, form.object.product_category_id), {prompt: "Choose product category.."}, {required: true, class: "form-control custom-select d-block w-100"} %>
                 </div>
                 <div class = "col-12 col-sm-6">
-                  <% product_type= %w[Packet kg gram ltr. ml. bundle] %>
-                  <%= form.select :product_unit, options_for_select(product_type, @product.product_unit), {prompt: "Choose product unit.."}, {required: true, class: "form-control custom-select d-block w-100"} %>
+                  <% product_type= %w[Packet liquid solid] %>
+                  <%= form.select :type, options_for_select(product_type, @product.product_unit), {prompt: "Choose product unit.."}, {required: true, class: "form-control custom-select d-block w-100"} %>
+                </div>
+              </div>
+              <div class="input-group row">
+                <div class = "col-12">
+                  <%= form.text_field :title, autofocuskg gram ltr. ml. bundle: true, class: "input--style-2", placeholder: "Product name", required: true %>
+                </div>
+              </div>
+              <div class="input-group row">
+                <div class = "col-12">
+                  <%= form.text_field :summary, class: "input--style-2", placeholder: "Description", required: true %>
+                </div>
+              </div>
+              <div class="input-group row">
+                <div class = "col-12">
+                  <%= form.text_area :content, class: "input--style-2", placeholder: "Description", required: true %>
                 </div>
               </div>
 

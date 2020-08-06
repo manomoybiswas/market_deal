@@ -1,25 +1,23 @@
 class CategoriesController < ApplicationController
+  layout "dashboard"
   before_action :authenticate_user!, :check_user_is_admin
   before_action :set_category, only: [:edit, :update, :destroy]
 
   def create
     @category = Category.new(category_params)
     return redirect_to request.referrer, flash: { success: t("categories.add_success") } if @category.save
-    render "new", flash: { danger: t("categories.faild") }
+    @categories = Category.all
+    render "index", categories: @categories, flash: { danger: t("categories.faild") }
   end
   
   def destroy
     return redirect_to request.referrer, flash: { success: t("category.destroy_success") } if @category.destroy
-    # else
     flash[:danger]=I18n.t "category.faild"
-    # end
-  end
-  
-  def edit
   end
   
   def index
     @categories = Category.all
+    return @category = Category.find(params[:id]) if params[:id]
     @category = Category.new
   end
 

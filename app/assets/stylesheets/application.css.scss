@@ -1,7 +1,9 @@
 @import "/*";
 @import "bootstrap";
 @import "font-awesome";
-
+@import "hamburgers/dist/hamburgers";
+@import "./sidenav.scss";
+@import "./home.scss";
 *{
   padding: 0;
   margin: 0;
@@ -16,11 +18,21 @@ html
 body{
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 main{
   min-height: calc(100vh - 33px - 60px - 50px - 398px);
 }
-
+// .loader {
+//   position: fixed;
+//   left: 0px;
+//   top: 0px;
+//   width: 100%;
+//   height: 100%;
+//   z-index: 9999;
+//   background: url('images/pageLoader.gif') 50% 50% no-repeat rgb(249,249,249);
+//   opacity: .8;
+// }
 .container{
   max-width: 100%;
   padding-left: 0;
@@ -113,6 +125,11 @@ main{
 .cart-icon{
   display:none;
 }
+.carousel{
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .corousel-image{
   background: no-repeat left top/cover;
   width: 100%;
@@ -140,7 +157,7 @@ input, textarea {
   display: block;
   padding: 0px 15px 1px;
   background-color: #343a40;
-  box-shadow: 0px 5px 3px 0px rgb(255, 255, 255);
+  // box-shadow: 0px 5px 3px 0px rgb(255, 255, 255);
 }
 .navbar-search-bar{
   display: none;
@@ -230,11 +247,11 @@ input, textarea {
   .wrapper{
     padding-left:20px;
   }
-  .navbar{
-    box-shadow: 0px 15px 9px 0px rgba(255, 255, 255, 0.6);
-  }
+  // .navbar{
+  //   box-shadow: 0px 15px 9px 0px rgba(255, 255, 255, 0.6);
+  // }
   .corousel-image{
-    height: 550px;
+    height: 350px;
   }
   .form-control{
     border: none;
@@ -298,6 +315,29 @@ input, textarea {
   }
   .nav-container{
     max-width: 1910px;
+  }
+  .corousel-image{
+    height: 400px;
+    box-shadow: 10px;   
+  }
+  .carousel:before {
+    content: "";
+    z-index: 999;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0) 50%,rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(15%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0)), color-stop(85%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 1)));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0) 50%,rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0) 50%,rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0) 50%,rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%);
+    /* IE10+ */
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%,rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 50%,rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
+    /* W3C */
   }
   .before-copyright{
 		font-size: 12px;

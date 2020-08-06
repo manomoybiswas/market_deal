@@ -1,0 +1,240 @@
+// body{
+//   color: #222;
+//   background-color: #fff;
+// }
+//  a{
+//    color: #222;
+//  }
+//  body.dark-theme{
+//    color: #fff;
+//    background-color: #222;
+//  }
+//  body.dark-theme a{
+//    color: #222;
+//  }
+// .display-block{
+//   display: block;
+// }
+// .display-none{
+//   display: none;
+// }
+.dashboard-item{
+  padding-top: 20px;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.671);
+  margin: 0 15px;
+  cursor: pointer;
+  .fa-pie-chart,
+  .fa-users,
+  .fa-tags,
+  .fa-product-hunt,
+  .fa-balance-scale,
+  .fa-dropbox,
+  .fa-shopping-cart,
+  .fa-address-card-o{
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.849);
+  }
+  .fa-sun-o{
+    color: rgb(241, 111, 4);
+  }
+  .fa-moon-o{
+    color: rgb(192, 150, 59);
+  }
+  .menu-text{
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.849);
+  }
+  .fa-caret-down,
+  .fa-caret-up {
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.849);
+  }
+  .sub-menu{
+    width: 320px;
+    margin-left: -35px;
+    padding: 10px 0 10px 80px;
+    background-color: #222;
+    display: none;
+    position: relative;
+    transform: 0.5s;
+    .sub-menu-text a{
+      font-size: 16px;
+      display: block;
+      padding-top: 10px;
+      color: rgba(255, 255, 255, 0.849);
+    }
+    .fa-eye,
+    .fa-plus {
+      padding-top: 10px;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.849);
+    }
+  }
+}
+ .dashboard-item:last-child{
+   border-bottom: none;
+ }
+ .user-avater{
+  //  margin-top: 10px;
+  //  margin-left: 10px;
+   display: inline-block;
+  //  margin-top: -30px;
+  // position: absolute;
+  // width: 60px;
+ }
+ .user-details{
+   display: inline-block;
+  //  position: absolute;
+ }
+ .user-image{
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+}
+.user-name{
+  // padding-top: 30px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 26px;
+  border-radius: 50%;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #222;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider-btn {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 32px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  padding-left: 10px;
+  padding-top: 2px;
+  cursor: pointer;
+  outline: none;
+}
+.slider-btn:active, .slider-btn:focus{
+  outline: none;
+}
+input:checked + .slider {
+  background-color: #222;
+  outline: none;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #222;
+  outline: none;
+}
+input:checked + .slider .slider-btn{
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 50px;
+}
+.slider-btn {
+  border-radius: 20px;
+}
+#main{
+  min-height: calc(100vh - 30px - 60px - 50px - 30px);;
+  overflow: hidden;
+  margin-left: 320px;
+}
+.sidenav {
+  height: calc(100vh - 30px - 60px - 45px - 32px);
+  width: 320px;
+  position: fixed;
+  z-index: 1;
+  top: 140px;
+  left: 0;
+  padding-top: 5px;
+  overflow-x: hidden;
+}
+
+.sidenav a{
+  padding: 8px 8px 8px 20px;
+  text-decoration: none;
+  font-size: 25px;
+  // color: #cac7c7;
+  display: block;
+
+}
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Optional: Style the caret down icon */
+
+.hamburger{
+  z-index: 999;
+  margin-top: 10px;
+  padding: 10px 5px 3px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 40px;
+  position: absolute;
+  margin-left: -42px;
+}
+.hamburger:active, .hamburger:focus{
+  outline: none;
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+  background-color: #ffffff;
+  width: 30px;
+}
+.hamburger--spring.is-active .hamburger-inner::before, .hamburger-inner::after{
+  background-color: #ffffff !important;
+}
+@media screen and (min-width: 768px){
+  #main{
+    min-height: calc(100vh - 30px - 60px - 30px);
+    
+  }
+  .sidenav {
+    top: 90px;
+    min-height: calc(100vh - 30px - 60px - 26px);
+  }
+  .user-avater{
+    padding-top: 20px;
+    padding-left: 10px;;
+  }
+  .user-details{
+    padding-top: 20px;
+  }
+  .user-image{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+  }
+  .user-email{
+    font-size: 12px;
+  }
+  .user-role{
+    font-size: 11px;
+  }
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+

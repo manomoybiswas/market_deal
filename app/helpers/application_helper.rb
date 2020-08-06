@@ -17,4 +17,24 @@ module ApplicationHelper
   def admin?
     current_user.admin
   end
+    
+  def user_count
+    User.count
+  end
+
+  def product_count
+    Product.count
+  end
+  
+  def category_count
+    Category.count
+  end
+  
+  def order_count
+    Order.count
+  end
+  
+  def address_count
+    Address.count
+  end
 end

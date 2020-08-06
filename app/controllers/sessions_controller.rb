@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     if user
       login(@user)
       if @user.admin
-        redirect_to admin_dashboard_path, flash: { success: t("session.login_success", user: @user.name) }
+        redirect_to overview_path, flash: { success: t("session.login_success", user: @user.name) }
       else
         redirect_to root_path, flash: { success: t("session.login_success", user: @user.name) }
       end
@@ -32,5 +32,6 @@ class SessionsController < ApplicationController
   private
   def set_user
     @user = User.find_by_email(params[:login][:email])
+    @user = User.find_by_username(params[:login][:email]) unless @user
   end
 end
